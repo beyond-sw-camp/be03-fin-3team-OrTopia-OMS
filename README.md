@@ -54,3 +54,5 @@
 이 프로젝트를 통해 공급망 관리의 효율성과 고객 만족도를 높이는 것을 최종 목표로 합니다. 프로젝트의 성공적인 완료는 공급망 내에서의 효율적인 주문 처리, 재고 관리, 그리고 고객 및 공급업체 간의 통합된 커뮤니케이션을 가능하게 하여, 전반적인 운영 비용을 절감하고 고객 서비스 품질을 향상시킬 것입니다.
 
 ## 요구사항명세서
+<img src="https://github.com/yujeong-shin/OrTopia/blob/main/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EC%A0%95%EC%9D%98%EC%84%9C1.jpg">
+<img src="https://github.com/yujeong-shin/OrTopia/blob/main/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EC%A0%95%EC%9D%98%EC%84%9C%202.jpg">
