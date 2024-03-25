@@ -2,7 +2,9 @@
 
 # OrTopia
 공급망 주문 관리 시스템
+<br>
 <a href = "https://www.notion.so/c275b28e80d348438337a95a55b7bc56"><img src="https://img.shields.io/badge/Team Notion-ffffff?style=social&logo=Notion&logoColor=black" /></a>
+<br>
 [🤠신유정](https://github.com/yujeong-shin)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🐻임재영](https://github.com/Hi-Imjaeyoung)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🐼권도훈](https://github.com/kwondohoon1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🐱김종원](https://github.com/Kimjongwon1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 <br>
@@ -18,7 +20,7 @@
   <h2>📝 프로젝트 계획서</h2>
 <div align=center>
   <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C1.png?raw=true" />
-  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C1.png?raw=true" />
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C2.png?raw=true" />
   <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C3.png?raw=true" />
   <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C4.png?raw=true" />
 </div>
