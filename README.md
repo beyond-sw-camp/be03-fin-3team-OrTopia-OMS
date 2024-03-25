@@ -3,7 +3,10 @@
 # OrTopia
 공급망 주문 관리 시스템
 <br>
+<br>
 <a href = "https://www.notion.so/c275b28e80d348438337a95a55b7bc56"><img src="https://img.shields.io/badge/Team Notion-ffffff?style=social&logo=Notion&logoColor=black" /></a>
+<br>
+<br>
 <br>
 [🤠신유정](https://github.com/yujeong-shin)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🐻임재영](https://github.com/Hi-Imjaeyoung)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🐼권도훈](https://github.com/kwondohoon1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🐱김종원](https://github.com/Kimjongwon1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
