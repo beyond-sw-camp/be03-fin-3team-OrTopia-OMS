@@ -1,0 +1,41 @@
+server:
+  port: 8080
+spring:
+#    유레카 서버에 아래 application name으로 서비스명을 등록.
+  application:
+    name: API-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: item-service
+#          /item-service 로 시작하는 url 요청이 들어올 경우
+          predicates:
+            - Path=/item-service/**
+#          filters의 stripPrefix=1은 첫번째 접두어 제거
+          filters:
+            - StripPrefix=1
+#          lb://application 이름(eureka에 등록된 서비스 명) 이 들어옴
+#          uri : http:localhost:8081로 선언하면 로드밸런싱이 아니라 8081로 직접 연결
+          uri: lb://item-service
+        - id: member-service
+          predicates:
+            - Path=/member-service/**
+          filters:
+            - StripPrefix=1
+          uri: lb://member-service
+        - id: order-service
+          predicates:
+            - Path=/order-service/**
+          filters:
+            - StripPrefix=1
+          uri: lb://order-service
+jwt:
+  expiration: 30 # 30 min
+  secretKey: mysecret
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+    hostname: localhost
