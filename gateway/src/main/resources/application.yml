@@ -7,16 +7,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: item-service
-#          /item-service 로 시작하는 url 요청이 들어올 경우
+        - id: item
           predicates:
-            - Path=/item-service/**
-#          filters의 stripPrefix=1은 첫번째 접두어 제거
+            - Path=/item/**
           filters:
             - StripPrefix=1
-#          lb://application 이름(eureka에 등록된 서비스 명) 이 들어옴
-#          uri : http:localhost:8081로 선언하면 로드밸런싱이 아니라 8081로 직접 연결
-          uri: lb://item-service
+          uri: lb://item
         - id: member-service
           predicates:
             - Path=/member-service/**

@@ -1,65 +1,86 @@
 package com.example.ordering_lecture.member.service;
 
+import com.example.ordering_lecture.member.domain.LikedSeller;
 import com.example.ordering_lecture.member.domain.Member;
-import com.example.ordering_lecture.member.dto.MemberCreateReqDto;
-import com.example.ordering_lecture.member.dto.MemberLoginReqDto;
-import com.example.ordering_lecture.member.dto.MemberResponseDto;
+import com.example.ordering_lecture.member.domain.Seller;
+import com.example.ordering_lecture.member.dto.Buyer.*;
+import com.example.ordering_lecture.member.dto.Seller.SellerResponseDto;
+import com.example.ordering_lecture.member.repository.LikedSellerRepository;
 import com.example.ordering_lecture.member.repository.MemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.ordering_lecture.member.repository.SellerRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@Transactional
 public class MemberService {
-    @Autowired
     private final PasswordEncoder passwordEncoder;
-    @Autowired
     private final MemberRepository memberRepository;
-    public MemberService(MemberRepository memberRepository,PasswordEncoder passwordEncoder){
+    private final SellerRepository sellerRepository;
+    private final LikedSellerRepository likedSellerRepository;
+    public MemberService(MemberRepository memberRepository, PasswordEncoder passwordEncoder, SellerRepository sellerRepository, LikedSellerRepository likedSellerRepository){
         this.memberRepository = memberRepository;
         this.passwordEncoder = passwordEncoder;
+        this.sellerRepository = sellerRepository;
+        this.likedSellerRepository = likedSellerRepository;
     }
-
-    public Member create(MemberCreateReqDto memberCreateReqDto){
-        if(memberRepository.findByEmail(memberCreateReqDto.getEmail()).isPresent()){
-            throw new IllegalArgumentException("중복된 이메일입니다.");
-        }
-        memberCreateReqDto.setPassword(passwordEncoder.encode(memberCreateReqDto.getPassword()));
-        return memberRepository.save(Member.toMember(memberCreateReqDto));
+    public MemberResponseDto createMember(MemberRequestDto memberRequestDto) {
+        memberRequestDto.setPassword(passwordEncoder.encode(memberRequestDto.getPassword()));
+        Member member = memberRequestDto.toEntity();
+        memberRepository.save(member);
+        return MemberResponseDto.toDto(member);
     }
-
-    public Member doLogin(MemberLoginReqDto memberLoginReqDto) throws IllegalArgumentException{
-        Member member = memberRepository.findByEmail(memberLoginReqDto.getEmail())
-                .orElseThrow(()->new IllegalArgumentException("존재하지 않는 이메일 입니다."));
-        if(!passwordEncoder.matches(memberLoginReqDto.getPassword(),member.getPassword())){
-            throw new IllegalArgumentException("비밀번호가 틀립니다.");
-        }
-        return member;
+    public MemberResponseDto findById(Long id) {
+        //TODO : 에러 코드 추후 수정
+        Member member = memberRepository.findById(id).orElseThrow();
+        return MemberResponseDto.toDto(member);
     }
-
-    public MemberResponseDto findMyInfo(String email){
-        Member member = memberRepository.findByEmail(email).orElseThrow(EntityNotFoundException::new);
-        return MemberResponseDto.toMemberResponseDto(member);
-    }
-
-    public List<MemberResponseDto> findAll(){
-        return memberRepository.findAll().stream()
-                .map(a->MemberResponseDto.toMemberResponseDto(a))
+    public List<MemberResponseDto> findAllMembers() {
+        return memberRepository.findAll()
+                .stream()
+                .map(MemberResponseDto::toDto)
                 .collect(Collectors.toList());
     }
-
-    public MemberResponseDto findById(Long id) {
+    public List<MemberResponseDto> findMembers(){
+        return memberRepository.findByDelYNFalse()
+                .stream()
+                .map(MemberResponseDto::toDto)
+                .collect(Collectors.toList());
+    }
+    @Transactional
+    public MemberResponseDto updateMember(Long id, MemberUpdateDto memberUpdateDto) {
+        //TODO : 에러 코드 추후 수정
         Member member = memberRepository.findById(id).orElseThrow();
-        return MemberResponseDto.toMemberResponseDto(member);
+        member.updateMember(memberUpdateDto);
+        return MemberResponseDto.toDto(member);
+    }
+    @Transactional
+    public void deleteMember(Long id) {
+        //TODO : 에러 코드 추후 수정
+        Member member = memberRepository.findById(id).orElseThrow();
+        member.deleteMember();
+
+        Seller seller = sellerRepository.findById(id).orElseThrow();
+        seller.deleteSeller();
+    }
+    @Transactional
+    public Object likeSeller(MemberLikeSellerRequestDto memberLikeSellerRequestDto) {
+        //TODO : 에러 코드 추후 수정
+        // memberID와 sellerID가 같다면 에러 처리
+        Member buyer = memberRepository.findById(memberLikeSellerRequestDto.getBuyerID()).orElseThrow();
+        Seller seller = sellerRepository.findById(memberLikeSellerRequestDto.getSellerID()).orElseThrow();
+        LikedSeller likedSeller = memberLikeSellerRequestDto.toEntity(buyer, seller);
+        likedSellerRepository.save(likedSeller);
+        return MemberLikeSellerResponseDto.toDto(likedSeller);
     }
 
-    public MemberResponseDto findByEmail(String email) {
-        return MemberResponseDto.toMemberResponseDto(memberRepository.findByEmail(email).orElseThrow());
+    public Object likeSellers(Long id) {
+        return likedSellerRepository.findAllByBuyerId(id)
+                .stream()
+                .map(likedSeller -> SellerResponseDto.toDto(likedSeller.getSeller()))
+                .collect(Collectors.toList());
     }
 }
