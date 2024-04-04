@@ -21,12 +21,7 @@
 <br>
 <br>
   <h2>📝 프로젝트 계획서</h2>
-<div align=center>
-  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C1.png?raw=true" />
-  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C2.png?raw=true" />
-  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C3.png?raw=true" />
-  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C4.png?raw=true" />
-</div>
+  [프로젝트 계획서](https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B3%84%ED%9A%8D%EC%84%9C.pdf)
 </div>
 <br>
 <br>
@@ -34,19 +29,23 @@
 ---
 <div align=center>
 <h2> 🛠️ 요구사항 정의서 </h2>
-  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C1.png?raw=true" />
-  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C2.png?raw=true" />
-  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C3.png?raw=true" />
-  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C4.png?raw=true" />
+    [요구사항 정의서](https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.pdf)
 </div>
 <br>
 <br>
+
+---
+<div align=center>
+<h2> 🎨 화면 설계서 </h2>
+    [화면 설계서](https://www.figma.com/file/LJ6RQlTleAg8cQPLwReTHm/3%EC%A1%B0?type=design&node-id=0-1&mode=design&t=87fYffD9wVwiXvXe-0)
+</div>
 <br>
 <br>
 
 ---
 <div align=center>
 <h2> 🕒 WBS </h2>
+  [WBS](https://github.com/yujeong-shin/OrTopia/blob/master/Docs/WBS.pdf)
   <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS1.png?raw=true" />
   <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS2.png?raw=true" />
 </div>
