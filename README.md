@@ -21,7 +21,7 @@
 <br>
 <br>
 <h2>📝 프로젝트 계획서 </h2>
-[프로젝트 계획서](https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B3%84%ED%9A%8D%EC%84%9C.pdf)
+<a href="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B3%84%ED%9A%8D%EC%84%9C.pdf">프로젝트 계획서</a>
 </div>
 <br>
 <br>
@@ -29,7 +29,7 @@
 ---
 <div align=center>
 <h2> 🛠️ 요구사항 정의서 </h2>
-[요구사항 정의서](https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.pdf)
+<a href="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.pdf">요구사항 정의서</a>
 </div>
 <br>
 <br>
@@ -37,7 +37,7 @@
 ---
 <div align=center>
 <h2> 🎨 화면 설계서 </h2>
-[화면 설계서](https://www.figma.com/file/LJ6RQlTleAg8cQPLwReTHm/3%EC%A1%B0?type=design&node-id=0-1&mode=design&t=87fYffD9wVwiXvXe-0)
+<a href="https://www.figma.com/file/LJ6RQlTleAg8cQPLwReTHm/3%EC%A1%B0?type=design&node-id=0-1&mode=design&t=87fYffD9wVwiXvXe-0">화면 설계서</a>
 </div>
 <br>
 <br>
@@ -45,7 +45,7 @@
 ---
 <div align=center>
 <h2> 🕒 WBS </h2>
-[WBS](https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS.pdf)
+<a href="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS.pdf">WBS</a>
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS1.png?raw=true" />
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS2.png?raw=true" />
 </div>
@@ -55,6 +55,6 @@
 ---
 <div align=center>
 <h2> 🖼️ ERD </h2> 
-[ERD](https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/ERD.png)
+<a href="[https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS.pdf](https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/ERD.png)">ERD</a>
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/ERD.png?raw=true" />
 </div>
