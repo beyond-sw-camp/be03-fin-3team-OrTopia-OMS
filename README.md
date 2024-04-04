@@ -1,107 +1,60 @@
-# 주문 관리 시스템
+<div align=center>
+
+# OrTopia
+공급망 주문 관리 시스템
+<br>
+<br>
+<a href = "https://www.notion.so/c275b28e80d348438337a95a55b7bc56"><img src="https://img.shields.io/badge/Team Notion-ffffff?style=social&logo=Notion&logoColor=black" /></a>
+<br>
+<br>
+<br>
+[🤠신유정](https://github.com/yujeong-shin)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🐻임재영](https://github.com/Hi-Imjaeyoung)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🐼권도훈](https://github.com/kwondohoon1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🐱김종원](https://github.com/Kimjongwon1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+<br>
+<br>
+
 ---
-### 기획안 3Team OrTopia (Order Utopia)
-### 🤠신유정 🐻임재영 🐼권도훈 🐱김종원
+<div align=center>
+<h2> 🗓️ 전체 프로젝트 일정 </h2>
+2024.03.16 ~ 2024.05.09
+<br>
+<br>
+<br>
+  <h2>📝 프로젝트 계획서</h2>
+<div align=center>
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C1.png?raw=true" />
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C2.png?raw=true" />
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C3.png?raw=true" />
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C4.png?raw=true" />
+</div>
+</div>
+<br>
+<br>
+
 ---
+<div align=center>
+<h2> 🛠️ 요구사항 정의서 </h2>
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C1.png?raw=true" />
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C2.png?raw=true" />
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C3.png?raw=true" />
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C4.png?raw=true" />
+</div>
+<br>
+<br>
+<br>
+<br>
 
-# 프로젝트 계획서
+---
+<div align=center>
+<h2> 🕒 WBS </h2>
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS1.png?raw=true" />
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS2.png?raw=true" />
+</div>
+<br>
+<br>
 
-### 프로젝트 명칭
-
-(가제)오토피아
-
-- 모두가 꿈꾸는, 이상적인 주문 관리 시스템
-
-
-### 프로젝트 목표
-
-온라인 이커머스 구현
-
-### 배경 및 필요성
-
-온라인 이커머스 시장에서 사용자 경험(UX)과 인터페이스(UI)의 중요성은 점점 더 커지고 있습니다. 사용자가 원활하게 상품을 검색하고 구매할 수 있도록 돕는 것은 물론, 구매 이력과 같은 데이터를 효과적으로 관리하고 가시화하는 것이 중요합니다. 
-
-이러한 배경에서, 본 프로젝트는 사용자 친화적인 인터페이스와 효율적인 데이터 관리 시스템을 통해 판매자와 구매자 간의 상호작용을 강화하고자 합니다. 주문 이력에 대한 가시성 부족과 같은 문제를 해결하고, 사용자에게 더 나은 쇼핑 경험을 제공하기 위한 목적으로 시작되었습니다.
-## 프로젝트 범위
-
-### 포함되는 기능
-
-- 데이터 분석 및 가시화
-    - 판매 데이터 기반 분석 및 가시화
-        - ex) 영업 이익, 매출 실적, …
-    - 구매 데이터 기반 구매자 정보 분석 및 가시화
-        - ex) 사용자의 연령 비율, 구매 시간대, …
-- 상품별 추천 시스템
-    - 상품별 ’같이 많이 구매한 물품‘ 3가지 추천
-        - ex) 식빵 → 양상추, 토마토, 햄, …
-- 판매자 점수
-    - 구매자의 평가에 따라 판매자 점수 변동
-        - ex) 불만족 5점 → 판매자 점수 -5, 만족 5점 → 판매자 점수 +5
-    - 점수별 등급 시스템
-        - 점수에 따라 메달 이미지 변화 🥇🥈🥉
-- 쿠폰
-    - 판매자가 자신의 상품에 대해 쿠폰 발행 가능
-    - 특정 상품에만 쿠폰을 사용 가능하도록 제한 가능
-
-### 추가 구현 사항
-- 광고 기능
-    - 광고를 사용하면 판매 상품 목록에서 최상위 노출
-- 모바일 환경 지원
-    - 반응형 웹 페이지를 만들어, 모바일 환경에서도 이용 가능한 서비스 지원
-
-## 협업 방식
-
-애자일
-- 분석 및 설계 → 구현 → 테스트 → 수정 과정의 반복
-- 빠르고, 변경 사항에 유연한 개발 가능
-
-## 목표 및 성과 지표
-
-### 주요 목표
-
-- 주문 처리 시간 단축
-- 재고 정확도 향상
-
-### 성과 지표
-
-- 주문 처리 속도  ?
-- 재고 정확도
-
-## 사용 프로그램
-
-### 기술 스택
-
-- **프론트엔드**:  Vue.js (vuetify)
-- **백엔드**: Spring Boot
-- **데이터베이스**: Maria DB
-- **인증 및 보안**: JWT, OAuth
-- **API**
-    - 결제 처리 API (카카오페이, 네이버페이, 토스 API 등)
-    - 이메일 및 휴대폰 인증 API
-- **기타 도구**: Docker, Git, Jenkins(CI/CD), kubernetes, AWS
-
-## 결론 및 기대 효과
-
-사용자 친화적인 UX/UI를 제공함으로써 사용자의 쇼핑 경험을 대폭 개선할 것으로 기대됩니다. 상품별 추천 시스템과 판매자 점수 시스템은 사용자의 의사 결정을 돕고, 쿠폰 및 광고 기능은 판매자에게 더 많은 마케팅 기회를 제공할 것입니다. 또한, 데이터 분석 및 가시화 기능을 통해 사용자와 판매자 모두 자신의 구매 및 판매 이력을 쉽게 확인하고 관리할 수 있게 됩니다. 이는 올바른 소비 계획 및 마케팅 전략 수립에 큰 도움이 될 것입니다. 결국, 이 프로젝트는 온라인 이커머스 시장에서 사용자와 판매자 모두에게 긍정적인 변화를 가져올 것으로 기대됩니다. 
-
-이러한 변화는 단순히 쇼핑의 편리함을 넘어서, 온라인 이커머스 시장의 성장과 발전에 기여할 것입니다. 사용자와 판매자 간의 신뢰를 구축하고, 더욱 효율적인 상거래 환경을 조성함으로써, 지속 가능한 이커머스 생태계를 만드는 데 중요한 역할을 할 것입니다.
-
-## 요구사항명세서
-<details>
-<img src="https://github.com/yujeong-shin/OrTopia/blob/f3352b92ebe0eea530f35029f57c6276df914e20/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C1.png">
-<img src="https://github.com/yujeong-shin/OrTopia/blob/f3352b92ebe0eea530f35029f57c6276df914e20/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C2.png">
-<img src="https://github.com/yujeong-shin/OrTopia/blob/f3352b92ebe0eea530f35029f57c6276df914e20/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C3.png">
-<img src="https://github.com/yujeong-shin/OrTopia/blob/f3352b92ebe0eea530f35029f57c6276df914e20/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C4.png">
-</details>
-
-## ERD
-<details>
-<img src="https://github.com/yujeong-shin/OrTopia/blob/f3352b92ebe0eea530f35029f57c6276df914e20/Docs/ERD.png">
-</details>
-
-
-## WBS
-<details>
-<img src="https://github.com/yujeong-shin/OrTopia/blob/f3352b92ebe0eea530f35029f57c6276df914e20/Docs/WBS1.png">
-<img src="https://github.com/yujeong-shin/OrTopia/blob/f3352b92ebe0eea530f35029f57c6276df914e20/Docs/WBS2.png">
-</details>
+---
+<div align=center>
+<h2> 🖼️ ERD </h2>
+  <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/ERD.png?raw=true" />
+</div>
