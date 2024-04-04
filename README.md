@@ -38,8 +38,7 @@
 <div align=center>
 <h2> 🎨 화면 설계서 </h2>
 <a href="https://www.figma.com/file/LJ6RQlTleAg8cQPLwReTHm/3%EC%A1%B0?type=design&node-id=0-1&mode=design&t=87fYffD9wVwiXvXe-0">화면 설계서</a>
-![image](https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/fe957eaf-a4d3-4f66-8a1c-8a4eb745f307)
-
+<a href="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/fe957eaf-a4d3-4f66-8a1c-8a4eb745f307"></a>
 </div>
 <br>
 <br>
