@@ -20,8 +20,8 @@
 <br>
 <br>
 <br>
-<h2>📝 프로젝트 계획서</h2>
-[프로젝트 계획서](https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B3%84%ED%9A%8D%EC%84%9C.pdf)
+<h2>📝 프로젝트 계획서 </h2>
+[프로젝트 계획서](https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B3%84%ED%9A%8D%EC%84%9C.pdf)
 </div>
 <br>
 <br>
@@ -45,7 +45,7 @@
 ---
 <div align=center>
 <h2> 🕒 WBS </h2>
-[WBS](https://github.com/yujeong-shin/OrTopia/blob/master/Docs/WBS.pdf)
+[WBS](https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS.pdf)
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS1.png?raw=true" />
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS2.png?raw=true" />
 </div>
