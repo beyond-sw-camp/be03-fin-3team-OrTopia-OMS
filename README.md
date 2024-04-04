@@ -55,6 +55,6 @@
 ---
 <div align=center>
 <h2> 🖼️ ERD </h2> 
-<a href="[https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS.pdf](https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/ERD.png)">ERD</a>
+<a href="https://app.diagrams.net/#G1V4hFe8kKqSb__3v7j4n1dP4GaezfI1jR#%7B%22pageId%22%3A%22zsw55LCCuFM0yS5R2fEg%22%7D">ERD</a>
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/ERD.png?raw=true" />
 </div>
