@@ -21,7 +21,7 @@
 <br>
 <br>
 <h2>📝 프로젝트 계획서 </h2>
-<a href="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B3%84%ED%9A%8D%EC%84%9C.pdf">프로젝트 계획서</a>
+<a href="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B3%84%ED%9A%8D%EC%84%9C/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B3%84%ED%9A%8D%EC%84%9C.pdf">프로젝트 계획서</a>
 </div>
 <br>
 <br>
@@ -29,7 +29,7 @@
 ---
 <div align=center>
 <h2> 🛠️ 요구사항 정의서 </h2>
-<a href="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.pdf">요구사항 정의서</a>
+<a href="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EC%A0%95%EC%9D%98%EC%84%9C.pdf">요구사항 정의서</a>
 </div>
 <br>
 <br>
@@ -45,9 +45,9 @@
 ---
 <div align=center>
 <h2> 🕒 WBS </h2>
-<a href="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS.pdf">WBS</a>
-<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS1.png?raw=true" />
-<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/WBS2.png?raw=true" />
+<a href="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/WBS/WBS.pdf">WBS</a>
+<img src="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/WBS/WBS1.png" />
+<img src="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/WBS/WBS2.png" />
 </div>
 <br>
 <br>
@@ -56,13 +56,19 @@
 <div align=center>
 <h2> 🖼️ ERD </h2> 
 <a href="https://app.diagrams.net/#G1V4hFe8kKqSb__3v7j4n1dP4GaezfI1jR#%7B%22pageId%22%3A%22zsw55LCCuFM0yS5R2fEg%22%7D">ERD</a>
-<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/ERD.png?raw=true" />
+<img src="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/ERD/ERD.png" />
 </div>
 
 ---
 <div align=center>
 <h2> ⚙️ 시스템 아키텍처 설계서 </h2>
 <a href="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EC%84%A4%EA%B3%84%EC%84%9C/%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EC%84%A4%EA%B3%84%EC%84%9C.png">시스템 아키텍처 설계서</a>
+</div>
+
+---
+<div align=center>
+<h2> 📰 프로그램 사양서 </h2>
+<a href="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%82%AC%EC%96%91%EC%84%9C/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20%EC%82%AC%EC%96%91%EC%84%9C.pdf">프로그램 사양서</a>
 </div>
 
 ---
