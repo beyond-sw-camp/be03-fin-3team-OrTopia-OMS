@@ -14,12 +14,12 @@ public class ReviewResponseDto {
     private Long id;
     private byte score;
     private String content;
-    private String buyerEmail;
+    private Long buyerId;
     private Long itemId;
 
     public static ReviewResponseDto toDto(Review review){
         return ReviewResponseDto.builder()
-                .buyerEmail(review.getBuyerEmail())
+                .buyerId(review.getBuyerId())
                 .id(review.getId())
                 .itemId(review.getItem().getId())
                 .score(review.getScore())

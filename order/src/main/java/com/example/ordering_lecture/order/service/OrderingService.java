@@ -66,7 +66,7 @@ public class OrderingService {
         return orderResponseDtos;
     }
 
-    public Object showMyOrders(String email) {
+    public List<OrderResponseDto> showMyOrders(String email) {
         List<Ordering> orderings = orderRepository.findAllByEmail(email);
         return orderings.stream()
                 .map(OrderResponseDto::toDto)

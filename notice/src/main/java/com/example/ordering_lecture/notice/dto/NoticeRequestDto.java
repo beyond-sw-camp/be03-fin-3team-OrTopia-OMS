@@ -21,8 +21,7 @@ public class NoticeRequestDto {
     private String startDate;
     private String endDate;
 
-    public Notice toEntity(){
-        String fileUrl = "testing";
+    public Notice toEntity(String fileUrl){
         Notice notice = Notice.builder()
                 .name(this.getName())
                 .imagePath(fileUrl)

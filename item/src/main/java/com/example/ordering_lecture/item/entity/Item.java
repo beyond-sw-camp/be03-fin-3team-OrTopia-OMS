@@ -42,7 +42,7 @@ public class Item {
     @Builder.Default
     private boolean isBaned=false;
     @Column(nullable = false)
-    private String sellerEmail;
+    private Long sellerId;
     @OneToMany(mappedBy = "item",fetch = FetchType.LAZY, orphanRemoval = true,cascade = CascadeType.ALL)
     private List<Review> review;
     @CreationTimestamp
@@ -69,8 +69,8 @@ public class Item {
     public void updateMinimumStock(int minimumStock){
         this.minimumStock = minimumStock;
     }
-    public void updateSellerEmail(String sellerEmail){
-        this.sellerEmail = sellerEmail;
+    public void updateSellerId(Long sellerId){
+        this.sellerId = sellerId;
     }
     public void banItem(){
         this.isBaned = true;

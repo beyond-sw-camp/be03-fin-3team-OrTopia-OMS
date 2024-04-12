@@ -20,9 +20,9 @@ public class ItemUpdateDto {
     private Integer minimumStock;
     private boolean delYN;
     private boolean isBaned;
-    private String sellerEmail;
+    private Long sellerId;
 
-    public Item toUpdate(Item item){
+    public Item toUpdate(Item item,String url){
         if(name !=null){
             item.updateName(name);
         }
@@ -39,14 +39,13 @@ public class ItemUpdateDto {
             item.updateDetail(detail);
         }
         if(imagePath !=null){
-            String url = "updateTest";
             item.updateImagePath(url);
         }
         if(minimumStock !=null){
             item.updateMinimumStock(minimumStock);
         }
-        if(sellerEmail !=null){
-            item.updateSellerEmail(sellerEmail);
+        if(sellerId !=null){
+            item.updateSellerId(sellerId);
         }
         return item;
     }

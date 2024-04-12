@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/member.main.iml" filepath="$PROJECT_DIR$/.idea/modules/member.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/notice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/notice.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/order.main.iml" filepath="$PROJECT_DIR$/.idea/modules/order.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/recommendation.main.iml" filepath="$PROJECT_DIR$/.idea/modules/recommendation.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/최종.iml" filepath="$PROJECT_DIR$/.idea/최종.iml" />
     </modules>
   </component>

@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface BannedSellerRepository extends JpaRepository<BannedSeller, Long> {
     List<BannedSeller> findAllByDelYNFalse();
+    boolean existsBySellerId(Long sellerId);
 }

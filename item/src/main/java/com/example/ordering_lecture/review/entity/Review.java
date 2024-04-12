@@ -24,7 +24,7 @@ public class Review {
     @Column(nullable = false)
     private String content;
     @Column(nullable = false)
-    private String buyerEmail;
+    private Long buyerId;
     @JoinColumn(name="item_id",nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Item item;

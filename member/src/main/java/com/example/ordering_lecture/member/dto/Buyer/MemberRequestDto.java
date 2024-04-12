@@ -14,19 +14,19 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemberRequestDto {
-    @NotEmpty(message = "email is essential")
-    @Email(message = "email is not valid")
+    @NotEmpty(message = "EMAIL_IS_ESSENTIAL")
+    @Email(message = "EMAIL_IS_NOT_VALID")
     private String email;
-    @NotEmpty(message = "name is essential")
+    @NotEmpty(message = "NAME_IS_ESSENTIAL")
     private String name;
-    @NotEmpty(message = "password is essential")
-    @Size(min=4, message = "minimum length is 4")
+    @NotEmpty(message = " PASSWORD_IS_ESSENTIAL")
+    @Size(min=4, message = "PASSWORD_LENGTH")
     private String password;
-    @NotEmpty(message = "age is essential")
+    @NotEmpty(message = "AGE_IS_ESSENTIAL")
     private byte age;
-    @NotEmpty(message = "gender is essential")
+    @NotEmpty(message = "GENDER_IS_ESSENTIAL")
     private Gender gender;
-    @NotEmpty(message = "phoneNumber is essential")
+    @NotEmpty(message = "PHONENUMBER_IS_ESSENTIAL")
     private String phoneNumber;
 
     public Member toEntity(){

@@ -18,6 +18,7 @@ public class NoticeResponseDto {
 
     public static NoticeResponseDto toDto(Notice notice){
         return NoticeResponseDto.builder()
+                .id(notice.getId())
                 .name(notice.getName())
                 .imagePath(notice.getImagePath())
                 .startDate(notice.getStartDate())

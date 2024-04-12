@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/notice_server")
 public class NoticeController {
     private final NoticeService noticeService;
 
@@ -34,7 +33,6 @@ public class NoticeController {
     public NoticeResponseDto updateNotice(@PathVariable Long id, @RequestBody NoticeUpdateDto noticeUpdateDto) {
         return noticeService.updateNotice(id, noticeUpdateDto);
     }
-
     @PatchMapping("/delete/{id}")
     public String deleteNotice(@PathVariable Long id) {
         noticeService.deleteNotice(id);

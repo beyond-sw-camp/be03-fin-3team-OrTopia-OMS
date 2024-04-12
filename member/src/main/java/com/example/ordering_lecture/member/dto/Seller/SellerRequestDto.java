@@ -13,11 +13,11 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SellerRequestDto {
-    @NotEmpty(message = "businnessNumber is essential")
+    @NotEmpty(message = "BUSINNESSNUMBER_IS_ESSENTIAL")
     private String businnessNumber;
-    @NotEmpty(message = "companyName is essential")
+    @NotEmpty(message = "COMPANYNAME_IS_ESSENTIAL")
     private String companyName;
-    @NotEmpty(message = "businnessType is essential")
+    @NotEmpty(message = "BUSINNESSTYPE_IS_ESSENTIAL")
     private BusinnessType businnessType;
 
     public Seller toEntity(Member member){

@@ -6,12 +6,15 @@ spring:
       name: user
       password: password #PasswordEncoder.encode(password)
   application:
-    name: member
+    name: member-service
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/member
+    url: jdbc:mariadb://localhost:3306/member?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: 1234
+  redis:
+    host: localhost
+    port: 6379
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MariaDBDialect
@@ -20,8 +23,10 @@ spring:
       ddl-auto: update
     show_sql: true
 jwt:
-  expiration: 30 # 30 min
   secretKey: mysecret
+  token:
+    access-expiration-time: 1800000
+    refresh-expiration-time: 604800000
 eureka:
   client:
     serviceUrl:

@@ -1,5 +1,7 @@
 package com.example.ordering_lecture.item.dto;
 
+import com.example.ordering_lecture.common.ErrorCode;
+import com.example.ordering_lecture.common.OrTopiaException;
 import com.example.ordering_lecture.item.entity.Category;
 import com.example.ordering_lecture.item.entity.Item;
 import lombok.AllArgsConstructor;
@@ -13,38 +15,40 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemRequestDto {
-    @NotNull
+    @NotNull(message =  "EMPTY_ITEM_NAME")
     private String name;
+    @NotNull(message =  "EMPTY_ITEM_STOCK")
     private int stock;
+    @NotNull(message =  "EMPTY_ITEM_PRICE")
     private int price;
+    @NotNull(message =  "EMPTY_ITEM_CATEGORY")
     private String category;
+    @NotNull(message =  "EMPTY_ITEM_DETAIL")
     private String detail;
     private MultipartFile imagePath;
     private int minimumStock;
     private boolean delYN;
     private boolean isBaned;
-    private String sellerEmail;
+//    @NotNull(message =  "EMPTY_ITEM_SELLER")
+    private Long sellerId;
 
-    public Item toEntity(){
-        Category category = null;
-        try {
-            category = Category.valueOf(this.getCategory());
-        }catch (Exception e){
-            // TODO : Enum 값이 틀리거나, null이 들어온 경우의 에러를 잡는다.
-            e.printStackTrace();
-        }
+    public Item toEntity(String fileUrl, Long SellerId) throws OrTopiaException {
         //TODO : S3 저장 후 나오는 url를 넣어줌
-        String fileUrl = "testing";
-        Item item = Item.builder()
-                .name(this.getName())
-                .price(this.getPrice())
-                .category(category)
-                .stock(this.getStock())
-                .detail(this.getDetail())
-                .minimumStock(this.getMinimumStock())
-                .sellerEmail(this.getSellerEmail())
-                .imagePath(fileUrl)
-                .build();
-        return item;
+        try {
+            Category category = null;
+            category = Category.valueOf(this.getCategory());
+            return Item.builder()
+                    .name(this.getName())
+                    .price(this.getPrice())
+                    .category(category)
+                    .stock(this.getStock())
+                    .detail(this.getDetail())
+                    .minimumStock(this.getMinimumStock())
+                    .sellerId(SellerId)
+                    .imagePath(fileUrl)
+                    .build();
+        }catch (Exception e){
+            throw new OrTopiaException(ErrorCode.WRONG_ITEM_INFORMATION);
+        }
     }
 }

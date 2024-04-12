@@ -1,5 +1,6 @@
 package com.example.ordering_lecture.member.domain;
 
+import com.example.ordering_lecture.address.domain.Address;
 import com.example.ordering_lecture.member.dto.Buyer.MemberUpdateDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

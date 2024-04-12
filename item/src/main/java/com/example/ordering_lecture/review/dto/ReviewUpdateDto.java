@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReviewUpdateDto {
+    private Long id;
     private Byte score;
     private String content;
 

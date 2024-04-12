@@ -7,12 +7,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: item
+        - id: item-service
           predicates:
-            - Path=/item/**
+            - Path=/item-service/**
           filters:
             - StripPrefix=1
-          uri: lb://item
+          uri: lb://item-service
         - id: member-service
           predicates:
             - Path=/member-service/**
@@ -25,9 +25,20 @@ spring:
           filters:
             - StripPrefix=1
           uri: lb://order-service
+        - id: notice-service
+          predicates:
+            - Path=/notice-service/**
+          filters:
+            - StripPrefix=1
+          uri: lb://notice-service
+  redis:
+    host: localhost
+    port: 6379
 jwt:
   expiration: 30 # 30 min
   secretKey: mysecret
+  token:
+    access-expiration-time: 1800000
 eureka:
   client:
     serviceUrl:
