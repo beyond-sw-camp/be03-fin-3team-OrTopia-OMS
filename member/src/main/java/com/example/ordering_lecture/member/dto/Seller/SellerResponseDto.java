@@ -1,6 +1,6 @@
 package com.example.ordering_lecture.member.dto.Seller;
 
-import com.example.ordering_lecture.member.domain.BusinnessType;
+import com.example.ordering_lecture.member.domain.BusinessType;
 import com.example.ordering_lecture.member.domain.Seller;
 import lombok.Builder;
 import lombok.Data;
@@ -9,18 +9,18 @@ import lombok.Data;
 @Builder
 public class SellerResponseDto {
     private Long id;
-    private String businnessNumber;
+    private String businessNumber;
     private String companyName;
-    private BusinnessType businnessType;
+    private BusinessType businessType;
     private Long totalScore;
     private Long memberID;
 
     public static SellerResponseDto toDto(Seller seller) {
         return SellerResponseDto.builder()
                 .id(seller.getId())
-                .businnessNumber(seller.getBusinnessNumber())
+                .businessNumber(seller.getBusinessNumber())
                 .companyName(seller.getCompanyName())
-                .businnessType(seller.getBusinnessType())
+                .businessType(seller.getBusinessType())
                 .totalScore(seller.getTotalScore())
                 .memberID(seller.getMember().getId())
                 .build();

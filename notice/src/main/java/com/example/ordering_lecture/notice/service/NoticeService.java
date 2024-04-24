@@ -1,8 +1,10 @@
 package com.example.ordering_lecture.notice.service;
 
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.example.ordering_lecture.common.ErrorCode;
+import com.example.ordering_lecture.common.OrTopiaException;
 import com.example.ordering_lecture.notice.dto.NoticeRequestDto;
 import com.example.ordering_lecture.notice.dto.NoticeResponseDto;
 import com.example.ordering_lecture.notice.dto.NoticeUpdateDto;
@@ -10,8 +12,10 @@ import com.example.ordering_lecture.notice.entity.Notice;
 import com.example.ordering_lecture.notice.repository.NoticeRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.transaction.Transactional;
-import java.io.InputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,68 +31,80 @@ public class NoticeService {
         this.noticeRepository = noticeRepository;
         this.amazonS3Client = amazonS3Client;
     }
-
-    public NoticeResponseDto createNotice(NoticeRequestDto noticeRequestDto) {
-        String fileName = noticeRequestDto.getName() + System.currentTimeMillis();
-        String fileUrl = null;
-        try (InputStream inputStream = noticeRequestDto.getImagePath().getInputStream()) {
-            ObjectMetadata metadata = new ObjectMetadata();
-            metadata.setContentType(noticeRequestDto.getImagePath().getContentType());
-            metadata.setContentLength(noticeRequestDto.getImagePath().getSize());
-            amazonS3Client.putObject(bucket, fileName, inputStream, metadata);
-            fileUrl = amazonS3Client.getUrl(bucket, fileName).toString();
-        } catch (Exception e) {
-            throw new RuntimeException("S3에 이미지 업로드 실패", e);
+    public String uploadFileToS3(MultipartFile file) {
+        if (file.isEmpty()) {
+            throw new IllegalStateException("Cannot upload empty file");
         }
-        Notice notice = noticeRequestDto.toEntity(fileUrl);
-        notice.updateImagePath(fileUrl);
+
+        String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
+        try {
+            // 파일 메타데이터 설정
+            ObjectMetadata metadata = new ObjectMetadata();
+            metadata.setContentType(file.getContentType());
+            metadata.setContentLength(file.getSize());
+
+            // S3에 파일 업로드
+            amazonS3Client.putObject(new PutObjectRequest(bucket, fileName, file.getInputStream(), metadata));
+
+            // 업로드된 파일의 URL 반환
+            return amazonS3Client.getUrl(bucket, fileName).toString();
+        } catch (IOException e) {
+            throw new RuntimeException("s3에 업로드 실패", e);
+        }
+    }
+    public NoticeResponseDto createNotice(NoticeRequestDto noticeRequestDto) throws OrTopiaException {
+        if (noticeRequestDto.getName() == null || noticeRequestDto.getName().isEmpty()) {
+            throw new OrTopiaException(ErrorCode.EMPTY_NOTICE_TITLE);
+        }
+        if(noticeRequestDto.getImagePath() != null){
+            String fileName = System.currentTimeMillis() + "_" + noticeRequestDto.getImagePath().getOriginalFilename();
+            try {
+                // 파일 메타데이터 설정
+                ObjectMetadata metadata = new ObjectMetadata();
+                metadata.setContentType(noticeRequestDto.getImagePath() .getContentType());
+                metadata.setContentLength(noticeRequestDto.getImagePath() .getSize());
+
+                // S3에 파일 업로드
+                amazonS3Client.putObject(new PutObjectRequest(bucket, fileName, noticeRequestDto.getImagePath() .getInputStream(), metadata));
+
+                // 업로드된 파일의 URL 반환
+                String fileUrl =  amazonS3Client.getUrl(bucket, fileName).toString();
+                Notice notice = noticeRequestDto.toEntity(fileUrl);
+                return NoticeResponseDto.toDto(noticeRepository.save(notice));
+            } catch (IOException e) {
+                throw new RuntimeException("s3에 업로드 실패", e);
+            }
+        }
+        Notice notice = noticeRequestDto.toEntity(null);
         Notice savedNotice = noticeRepository.save(notice);
         return NoticeResponseDto.toDto(savedNotice);
     }
-
-
-    public List<NoticeResponseDto> showAllNotice(){
-        return noticeRepository.findAll().stream()
-                .map(NoticeResponseDto::toDto)
-                .collect(Collectors.toList());
-    }
-    public NoticeResponseDto findById(Long id) {
-        Notice notice = noticeRepository.findById(id).orElseThrow();
-        return NoticeResponseDto.toDto(notice);
-    }
-    @Transactional
-    public NoticeResponseDto updateNotice(Long id, NoticeUpdateDto noticeUpdateDto) {
-        Notice notice = noticeRepository.findById(id).orElseThrow(() -> new RuntimeException("공지사항을 찾을 수 없습니다."));
-
-        if (!noticeUpdateDto.getImagePath().isEmpty()) {
-            // 이미지 처리 로직
-            String fileUrl = notice.getImagePath();
-            if (fileUrl != null && !fileUrl.isEmpty()) {
-                String splitStr = ".com/";
-                amazonS3Client.deleteObject(
-                        new DeleteObjectRequest(bucket, fileUrl.substring(fileUrl.lastIndexOf(splitStr) + splitStr.length())));
-            }
-            String fileName = noticeUpdateDto.getName() + System.currentTimeMillis();
-            fileUrl = null;
-            try (InputStream inputStream = noticeUpdateDto.getImagePath().getInputStream()) {
-                ObjectMetadata metadata = new ObjectMetadata();
-                metadata.setContentType(noticeUpdateDto.getImagePath().getContentType());
-                metadata.setContentLength(noticeUpdateDto.getImagePath().getSize());
-
-                amazonS3Client.putObject(bucket, fileName, inputStream, metadata);
-                fileUrl = amazonS3Client.getUrl(bucket, fileName).toString();
-            } catch (Exception e) {
-                throw new RuntimeException("S3 서버 오류");
-            }
-            notice = noticeUpdateDto.toUpdate(notice, fileUrl);
-        } else {
-            notice = noticeUpdateDto.toUpdate(notice); // 여기가 수정된 부분입니다.
+    public List<NoticeResponseDto> showAllNotice() throws OrTopiaException {
+        List<Notice> notices = noticeRepository.findAll();
+        if (notices.isEmpty()) {
+            throw new OrTopiaException(ErrorCode.EMPTY_NOTICE_CONTENTS);
         }
+        return notices.stream().filter(notice -> !notice.isDelYN()).map(NoticeResponseDto::toDto).collect(Collectors.toList());
+    }
+    public NoticeResponseDto findById(Long id) throws OrTopiaException {
+        Notice notice = noticeRepository.findById(id)
+                .orElseThrow(() -> new OrTopiaException(ErrorCode.NOT_FOUND_NOTICE));
         return NoticeResponseDto.toDto(notice);
     }
+
     @Transactional
-    public void deleteNotice(Long id) {
-        Notice notice = noticeRepository.findById(id).orElseThrow();
+    public NoticeResponseDto updateNotice(Long id, NoticeUpdateDto noticeUpdateDto) throws OrTopiaException {
+        Notice notice = noticeRepository.findById(id)
+                .orElseThrow(() -> new OrTopiaException(ErrorCode.NOT_FOUND_NOTICE));
+        notice = noticeUpdateDto.toUpdate(notice);
+        noticeRepository.save(notice);
+        return NoticeResponseDto.toDto(notice);
+    }
+
+    @Transactional
+    public void deleteNotice(Long id) throws OrTopiaException {
+        Notice notice = noticeRepository.findById(id)
+                .orElseThrow(() -> new OrTopiaException(ErrorCode.DELETED_NOTICE));
         notice.deleteNotice();
     }
 }

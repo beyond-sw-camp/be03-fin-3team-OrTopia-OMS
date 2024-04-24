@@ -20,14 +20,14 @@ public class Seller {
     private Long id;
 
     @Column(nullable = false)
-    private String businnessNumber;
+    private String businessNumber;
 
     @Column(nullable = false)
     private String companyName;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private BusinnessType businnessType;
+    private BusinessType businessType;
 
     @Column
     @Builder.Default
@@ -48,14 +48,14 @@ public class Seller {
     private List<LikedSeller> likedSellers;
 
     public void updateSeller(SellerUpdateDto sellerUpdateDto){
-        if(sellerUpdateDto.getBusinnessNumber() != null){
-            this.businnessNumber = sellerUpdateDto.getBusinnessNumber();
+        if(sellerUpdateDto.getBusinessNumber() != null){
+            this.businessNumber = sellerUpdateDto.getBusinessNumber();
         }
         if(sellerUpdateDto.getCompanyName()!= null){
             this.companyName = sellerUpdateDto.getCompanyName();
         }
-        if(sellerUpdateDto.getBusinnessType()!= null){
-            this.businnessType = sellerUpdateDto.getBusinnessType();
+        if(sellerUpdateDto.getBusinessType()!= null){
+            this.businessType = sellerUpdateDto.getBusinessType();
         }
     }
     public void updateTotalScore(Long score){

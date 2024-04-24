@@ -10,4 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface MemberServiceClient {
     @GetMapping("/member/search/{email}")
     Long searchIdByEmail(@PathVariable("email") String email);
+
+    @GetMapping("/member/search/name/{email}")
+    String searchNameByEmail(@PathVariable("email") String email);
 }

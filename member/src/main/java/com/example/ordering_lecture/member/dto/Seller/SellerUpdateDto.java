@@ -1,6 +1,6 @@
 package com.example.ordering_lecture.member.dto.Seller;
 
-import com.example.ordering_lecture.member.domain.BusinnessType;
+import com.example.ordering_lecture.member.domain.BusinessType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SellerUpdateDto {
-    private String businnessNumber;
+    private String businessNumber;
     private String companyName;
-    private BusinnessType businnessType;
+    private BusinessType businessType;
 }

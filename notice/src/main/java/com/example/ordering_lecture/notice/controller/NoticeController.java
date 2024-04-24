@@ -1,10 +1,14 @@
 package com.example.ordering_lecture.notice.controller;
 
+import com.example.ordering_lecture.common.OrTopiaResponse;
 import com.example.ordering_lecture.notice.dto.NoticeRequestDto;
 import com.example.ordering_lecture.notice.dto.NoticeResponseDto;
 import com.example.ordering_lecture.notice.dto.NoticeUpdateDto;
 import com.example.ordering_lecture.notice.service.NoticeService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -17,25 +21,42 @@ public class NoticeController {
     }
 
     @PostMapping("/create")
-    public String createNotice(@ModelAttribute NoticeRequestDto noticeRequestDto) {
-        noticeService.createNotice(noticeRequestDto);
-        return "ok";
+    public ResponseEntity<OrTopiaResponse> createNotice(@ModelAttribute NoticeRequestDto noticeRequestDto) {
+        NoticeResponseDto noticeResponseDto = noticeService.createNotice(noticeRequestDto);
+        OrTopiaResponse orTopiaResponse = new OrTopiaResponse("create success",noticeResponseDto);
+        return new ResponseEntity<>(orTopiaResponse, HttpStatus.CREATED);
     }
+
     @GetMapping("/notices")
-    public List<NoticeResponseDto> notices() {
-        return noticeService.showAllNotice();
+    public ResponseEntity<OrTopiaResponse> getAllNotices() {
+        List<NoticeResponseDto> noticeResponseDtos = noticeService.showAllNotice();
+        OrTopiaResponse orTopiaResponse = new OrTopiaResponse("read success",noticeResponseDtos);
+        return new ResponseEntity<>(orTopiaResponse, HttpStatus.OK);
     }
+
     @GetMapping("/notice/{id}")
-    public Object findById(@PathVariable Long id){
-        return noticeService.findById(id);
+    public ResponseEntity<OrTopiaResponse> getNoticeById(@PathVariable Long id) {
+        NoticeResponseDto noticeResponseDto = noticeService.findById(id);
+        OrTopiaResponse orTopiaResponse = new OrTopiaResponse("read success", noticeResponseDto);
+        return new ResponseEntity<>(orTopiaResponse, HttpStatus.OK);
     }
+
     @PatchMapping("/update/{id}")
-    public NoticeResponseDto updateNotice(@PathVariable Long id, @RequestBody NoticeUpdateDto noticeUpdateDto) {
-        return noticeService.updateNotice(id, noticeUpdateDto);
+    public ResponseEntity<OrTopiaResponse> updateNotice(@PathVariable Long id, @RequestBody NoticeUpdateDto noticeUpdateDto) {
+        NoticeResponseDto updatedNotice = noticeService.updateNotice(id, noticeUpdateDto);
+        OrTopiaResponse orTopiaResponse = new OrTopiaResponse("update success", updatedNotice);
+        return new ResponseEntity<>(orTopiaResponse,HttpStatus.OK);
     }
+
     @PatchMapping("/delete/{id}")
-    public String deleteNotice(@PathVariable Long id) {
+    public ResponseEntity<OrTopiaResponse> deleteNotice(@PathVariable Long id) {
         noticeService.deleteNotice(id);
-        return "ok";
+        OrTopiaResponse orTopiaResponse = new OrTopiaResponse("delete success",null);
+        return new ResponseEntity<>(orTopiaResponse,HttpStatus.OK);
+    }
+
+    @PostMapping("/upload")
+    public String uploadImage(@RequestParam("file") MultipartFile file) {
+        return noticeService.uploadFileToS3(file);
     }
 }

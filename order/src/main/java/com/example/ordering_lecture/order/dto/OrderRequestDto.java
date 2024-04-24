@@ -23,6 +23,8 @@ public class OrderRequestDto {
     private String paymentMethod;
     @NotNull
     private String recipient;
+    @NotNull
+    private String pgToken;
     private List<OrderDetailRequestDto> orderDetailRequestDtoList;
 
     public Ordering toEntity(){

@@ -1,6 +1,6 @@
 package com.example.ordering_lecture.member.dto.Seller;
 
-import com.example.ordering_lecture.member.domain.BusinnessType;
+import com.example.ordering_lecture.member.domain.BusinessType;
 import com.example.ordering_lecture.member.domain.Member;
 import com.example.ordering_lecture.member.domain.Seller;
 import lombok.AllArgsConstructor;
@@ -13,18 +13,18 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SellerRequestDto {
-    @NotEmpty(message = "BUSINNESSNUMBER_IS_ESSENTIAL")
-    private String businnessNumber;
+    @NotEmpty(message = "BUSINESSNUMBER_IS_ESSENTIAL")
+    private String businessNumber;
     @NotEmpty(message = "COMPANYNAME_IS_ESSENTIAL")
     private String companyName;
-    @NotEmpty(message = "BUSINNESSTYPE_IS_ESSENTIAL")
-    private BusinnessType businnessType;
+    @NotEmpty(message = "BUSINESSTYPE_IS_ESSENTIAL")
+    private BusinessType businessType;
 
     public Seller toEntity(Member member){
         Seller seller = Seller.builder()
-                .businnessNumber(this.businnessNumber)
+                .businessNumber(this.businessNumber)
                 .companyName(this.companyName)
-                .businnessType(this.businnessType)
+                .businessType(this.businessType)
                 .member(member)
                .build();
         return seller;

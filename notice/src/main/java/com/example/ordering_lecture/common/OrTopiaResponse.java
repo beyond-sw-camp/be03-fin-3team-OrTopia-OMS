@@ -2,12 +2,17 @@ package com.example.ordering_lecture.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.http.HttpStatus;
+import lombok.NoArgsConstructor;
+
 
 @Data
 @AllArgsConstructor
-public class CommonResponse {
-    private HttpStatus status;
+@NoArgsConstructor
+public class OrTopiaResponse {
     private String message;
     private Object result;
+
+    public OrTopiaResponse(String message) {
+        this.message = message;
+    }
 }

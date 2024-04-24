@@ -25,7 +25,7 @@ public class LikedSeller {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false)
-    private Member buyer; //DB에 buyer_id
+    private Member buyer; //DB에 buyer_email
 
     @CreationTimestamp
     private LocalDateTime createdTime;

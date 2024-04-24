@@ -22,7 +22,7 @@ public class AddressController {
 
     @PostMapping("/create")
     public ResponseEntity<OrTopiaResponse> createAddress(@RequestHeader("myEmail") String email, @RequestBody AddressRequestDto addressRequestDto) {
-        addressService.createAddress(email, addressRequestDto);
+            addressService.createAddress(email, addressRequestDto);
         OrTopiaResponse response = new OrTopiaResponse("Address created successfully", null);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }

@@ -22,7 +22,7 @@ public class ReviewController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<OrTopiaResponse> createReview(@Valid @RequestBody ReviewRequestDto reviewRequestDto){
+    public ResponseEntity<OrTopiaResponse> createReview(@Valid @ModelAttribute ReviewRequestDto reviewRequestDto){
         ReviewResponseDto reviewResponseDto = reviewService.createReview(reviewRequestDto);
         OrTopiaResponse orTopiaResponse = new OrTopiaResponse("create success",reviewResponseDto);
         return new ResponseEntity<>(orTopiaResponse, HttpStatus.CREATED);
@@ -42,9 +42,9 @@ public class ReviewController {
         return new ResponseEntity<>(orTopiaResponse, HttpStatus.OK);
     }
     // 특정 사용자가 작성한 리뷰 조회
-    @GetMapping("/show_buyer/{buyerId}")
-    public ResponseEntity<OrTopiaResponse> showBuyerReviews(@PathVariable Long buyerId){
-        List<ReviewResponseDto> reviewResponseDtoList = reviewService.showBuyerReviews(buyerId);
+    @GetMapping("/show_buyer/{email}")
+    public ResponseEntity<OrTopiaResponse> showBuyerReviews(@PathVariable String email){
+        List<ReviewResponseDto> reviewResponseDtoList = reviewService.showBuyerReviews(email);
         OrTopiaResponse orTopiaResponse = new OrTopiaResponse("read success",reviewResponseDtoList);
         return new ResponseEntity<>(orTopiaResponse, HttpStatus.OK);
     }

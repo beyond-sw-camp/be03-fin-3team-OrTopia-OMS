@@ -45,6 +45,10 @@ public class Item {
     private Long sellerId;
     @OneToMany(mappedBy = "item",fetch = FetchType.LAZY, orphanRemoval = true,cascade = CascadeType.ALL)
     private List<Review> review;
+    @Column
+    private Long reviewNumber;
+    @Column
+    private Long score;
     @CreationTimestamp
     private LocalDateTime createdTime;
 
@@ -80,5 +84,10 @@ public class Item {
     }
     public void deleteItem(){
         this.delYN = true;
+    }
+
+    public void updateScore(byte score) {
+        this.reviewNumber++;
+        this.score += score;
     }
 }

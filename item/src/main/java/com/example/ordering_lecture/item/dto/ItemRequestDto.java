@@ -38,6 +38,8 @@ public class ItemRequestDto {
             Category category = null;
             category = Category.valueOf(this.getCategory());
             return Item.builder()
+                    .reviewNumber(0L)
+                    .score(0L)
                     .name(this.getName())
                     .price(this.getPrice())
                     .category(category)

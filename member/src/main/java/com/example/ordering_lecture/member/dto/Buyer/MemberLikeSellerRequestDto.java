@@ -15,8 +15,6 @@ import javax.validation.constraints.NotNull;
 public class MemberLikeSellerRequestDto {
     @NotNull(message = "SELLERID_IS_ESSENTIAL")
     private Long sellerID;
-    @NotNull(message = "BUYERID_IS_ESSENTIAL")
-    private Long buyerID;
     public LikedSeller toEntity(Member member, Seller seller){
         LikedSeller likedSeller = LikedSeller.builder()
                 .buyer(member)

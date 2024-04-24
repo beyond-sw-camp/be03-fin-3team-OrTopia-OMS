@@ -33,7 +33,7 @@ public class JwtGlobalFilter implements GlobalFilter {
     @Autowired
     private RedisTemplate<String, String> redisTemplate; // Changed to String, String
 
-    private final List<String> allowUrl = Arrays.asList("/member/create", "/doLogin", "/item/items","/item/read/{id}");
+    private final List<String> allowUrl = Arrays.asList("/member/create", "/doLogin", "/item/items","/item/read/{id}","/member/find-id", "/member/reset-password","/member/change-password/**","/payment/success/{email}", "/notices", "/notice/{id}","/payment/cancel","/payment/fail","/review/show_item/{itemId}");
     private final AntPathMatcher antPathMatcher = new AntPathMatcher();
 
     @Override
@@ -83,12 +83,13 @@ public class JwtGlobalFilter implements GlobalFilter {
     private Mono<Void> validateRefreshTokenAndGenerateNewAccessToken(ServerWebExchange exchange, String email, String role, GatewayFilterChain chain) {
         String refreshToken = exchange.getRequest().getHeaders().getFirst("X-Refresh-Token");
         String storedRefreshToken = redisTemplate.opsForValue().get("RT:" + email);
-
         if (refreshToken != null && refreshToken.equals(storedRefreshToken)) {
             String newAccessToken = generateNewAccessToken(email, role);
             // 새로운 액세스 토큰을 요청 헤더에 추가
             ServerHttpRequest modifiedRequest = exchange.getRequest().mutate()
                     .header("Authorization", "Bearer " + newAccessToken)
+                    .header("myEmail", email)
+                    .header("myRole", role)
                     .build();
             // 원래의 요청을 계속 처리하기 위해 exchange 객체를 수정
             return chain.filter(exchange.mutate().request(modifiedRequest).build());

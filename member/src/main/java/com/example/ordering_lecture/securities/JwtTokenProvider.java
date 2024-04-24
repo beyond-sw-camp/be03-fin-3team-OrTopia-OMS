@@ -28,9 +28,6 @@ public class JwtTokenProvider {
 
     @Value("${jwt.token.refresh-expiration-time}")
     private long refreshExpirationTime;
-    @Value("${jwt.token.recommend-expiration-time}")
-    private long recommendExpirationTime;
-
 
     public String createAccessToken(String email, String role) {
         Claims claims = Jwts.claims().setSubject(email);
@@ -60,20 +57,5 @@ public class JwtTokenProvider {
 
         return refreshToken;
     }
-    public String createRecommandToken(String email, String role) {
-        Date now = new Date();
-        String recommandToken = Jwts.builder()
-                .setSubject(email)
-                .setIssuedAt(now)
-                .setExpiration(new Date(now.getTime() + recommendExpirationTime))
-                .signWith(SignatureAlgorithm.HS256, secretKey)
-                .claim("role", role)
-                .compact();
 
-        // Redis에 리프레시 토큰 저장 (이메일을 키로 사용)
-        String RecommandKey = "RC:" + email;
-        redisTemplate.opsForValue().set(RecommandKey, recommandToken, recommendExpirationTime, TimeUnit.MILLISECONDS);
-
-        return recommandToken;
-    }
 }

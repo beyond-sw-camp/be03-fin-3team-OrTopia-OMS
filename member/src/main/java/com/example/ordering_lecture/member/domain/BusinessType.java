@@ -1,6 +1,6 @@
 package com.example.ordering_lecture.member.domain;
 
-public enum BusinnessType {
+public enum BusinessType {
     가구,
     도서,
     가전,

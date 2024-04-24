@@ -17,16 +17,21 @@ import javax.validation.constraints.NotNull;
 public class NoticeRequestDto {
     @NotNull
     private String name;
-    private MultipartFile imagePath;
+    @NotNull
+    private String contents;
+    @NotNull
     private String startDate;
+    @NotNull
     private String endDate;
+    private MultipartFile imagePath;
 
-    public Notice toEntity(String fileUrl){
+    public Notice toEntity(String imagePath){
         Notice notice = Notice.builder()
                 .name(this.getName())
-                .imagePath(fileUrl)
+                .contents(this.getContents())
                 .startDate(this.getStartDate())
                 .endDate(this.getEndDate())
+                .imagePath(imagePath)
                 .build();
         return notice;
     }

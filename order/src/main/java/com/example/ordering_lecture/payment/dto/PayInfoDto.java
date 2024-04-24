@@ -1,9 +1,15 @@
 package com.example.ordering_lecture.payment.dto;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PayInfoDto {
     private int price;
-    private String itemName;
+    private List<ItemDto> itemDtoList;
 }

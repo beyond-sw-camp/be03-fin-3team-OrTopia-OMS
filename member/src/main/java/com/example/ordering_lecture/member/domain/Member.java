@@ -1,11 +1,9 @@
 package com.example.ordering_lecture.member.domain;
 
 import com.example.ordering_lecture.address.domain.Address;
+import com.example.ordering_lecture.member.dto.Buyer.MemberNewpasswordRequestDto;
 import com.example.ordering_lecture.member.dto.Buyer.MemberUpdateDto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -17,6 +15,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -92,4 +91,11 @@ public class Member {
     public void deleteMember(){
         this.delYN = true;
     }
+
+
+
+    public void setPassword(String encodedPassword) {
+        this.password = encodedPassword;
+    }
+
 }

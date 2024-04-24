@@ -3,6 +3,7 @@ package com.example.ordering_lecture.member.dto.Buyer;
 import com.example.ordering_lecture.member.domain.LikedSeller;
 import com.example.ordering_lecture.member.domain.Member;
 import com.example.ordering_lecture.member.domain.Seller;
+import com.example.ordering_lecture.member.dto.Seller.SellerResponseDto;
 import lombok.Builder;
 import lombok.Data;
 
@@ -12,15 +13,15 @@ import java.time.LocalDateTime;
 @Builder
 public class MemberLikeSellerResponseDto {
     private Long id;
-    private Seller seller;
-    private Member buyer;
+    private SellerResponseDto seller;
+    private MemberResponseDto buyer;
     private LocalDateTime createdTime;
 
     public static MemberLikeSellerResponseDto toDto(LikedSeller likedSeller) {
         return MemberLikeSellerResponseDto.builder()
                 .id(likedSeller.getId())
-                .seller(likedSeller.getSeller())
-                .buyer(likedSeller.getBuyer())
+                .seller(SellerResponseDto.toDto(likedSeller.getSeller()))
+                .buyer(MemberResponseDto.toDto(likedSeller.getBuyer()))
                 .createdTime(likedSeller.getCreatedTime())
                 .build();
     }

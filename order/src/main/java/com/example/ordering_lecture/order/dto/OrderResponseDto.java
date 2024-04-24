@@ -29,6 +29,7 @@ public class OrderResponseDto {
         return OrderResponseDto.builder()
                 .email(ordering.getEmail())
                 .recipient(ordering.getRecipient())
+                .createdTime(ordering.getCreatedTime())
                 .id(ordering.getId())
                 .addressId(ordering.getAddressId())
                 .statue(ordering.getStatue().toString())

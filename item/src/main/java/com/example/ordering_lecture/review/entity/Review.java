@@ -22,9 +22,13 @@ public class Review {
     @Column(nullable = false)
     private byte score;
     @Column(nullable = false)
+    private Long orderDetailId;
+    @Column(nullable = false)
     private String content;
     @Column(nullable = false)
-    private Long buyerId;
+    private String buyerEmail;
+    @Column
+    private String imagePath;
     @JoinColumn(name="item_id",nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Item item;

@@ -1,14 +1,11 @@
 package com.example.ordering_lecture.notice.entity;
 
-import com.example.ordering_lecture.notice.dto.NoticeRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Builder
@@ -21,6 +18,9 @@ public class Notice {
     private Long id;
     @Column(nullable = false)
     private String name;
+    @Lob
+    @Column(nullable = false)
+    private String contents;
     @Column(nullable = false)
     private String imagePath;
     @Column(nullable = false)
@@ -33,8 +33,8 @@ public class Notice {
     public void updateName(String name){
         this.name = name;
     }
-    public void updateImagePath(String imagePath){
-        this.imagePath = imagePath;
+    public void updateContents(String contents){
+        this.contents = contents;
     }
     public void updateStartDate(String startDate){
         this.startDate = startDate;

@@ -27,11 +27,14 @@ public class SellerService {
         this.bannedSellerRepository = bannedSellerRepository;
     }
 
-    public SellerResponseDto createSeller(Long id, SellerRequestDto sellerRequestDto) throws OrTopiaException{
-        Member member = memberRepository.findById(id).orElseThrow(()->new OrTopiaException(ErrorCode.NOT_FOUND_MEMBER));
+    public SellerResponseDto createSeller(String email, SellerRequestDto sellerRequestDto) throws OrTopiaException{
+        Member member = memberRepository.findByEmail(email).orElseThrow(
+                ()-> new OrTopiaException(ErrorCode.NOT_FOUND_MEMBER)
+        );
         Seller seller = sellerRequestDto.toEntity(member);
         sellerRepository.save(seller);
         member.updateRoleToSeller();
+        memberRepository.save(member);//updateRoleToSeller() 메서드가 호출되었지만, 해당 엔티티를 영속화(Persist)하는 작업이 없어서 데이터베이스에 변경 사항이 반영되지 않았음 그래서 save를 해줬습니다. 수업시간때 배운걸 떠올리면 안해도 될 줄 알았는데 해줘야 했네요 <-이부분 추후 삭제 바람
         return SellerResponseDto.toDto(seller);
     }
 
