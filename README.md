@@ -122,12 +122,12 @@
 <br>
 <br>
 
+* 사용자별 추천 아이템 조회
+<br>
+<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/4b73af96-a9f6-4b80-a221-6f832cddf0b0" />
+<br>
+<br>
 
-* 장바구니
-<br>
-<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/ace85082-7d44-4244-8842-df28118e3d8a" />
-<br>
-<br>
 
 * 즐겨찾기
 <br>
@@ -138,5 +138,19 @@
 * 공지 사항
 <br>
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/634761e5-eb1e-4071-be16-b2f3ebda7f78" />
+<br>
+<br>
+
+
+* 장바구니
+<br>
+<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/ace85082-7d44-4244-8842-df28118e3d8a" />
+<br>
+<br>
+
+
+* 주문 및 결제
+<br>
+<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/24d95518-5c3f-4cc6-944a-6a52d195fe9f" />
 <br>
 <br>
