@@ -78,7 +78,7 @@
 <br>
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/3e9bdbe0-647f-4c2c-b63b-5b4ddcc8415e"
  />
-<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/6cf012fc-1469-4ed5-8a5a-53b2c84a339a" />
+<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/d8101d8b-d09c-424c-baae-225c49103c9c" />
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/27f74d94-1835-4912-9d71-774d67cc114c" />
 <br>
 <br>
@@ -151,6 +151,6 @@
 
 * 주문 및 결제
 <br>
-<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/24d95518-5c3f-4cc6-944a-6a52d195fe9f" />
+<img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/9d5a8396-16d7-4d9a-8090-e94fd98d33e7" />
 <br>
 <br>
