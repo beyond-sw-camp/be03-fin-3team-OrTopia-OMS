@@ -58,58 +58,64 @@
 <a href="https://app.diagrams.net/#G1V4hFe8kKqSb__3v7j4n1dP4GaezfI1jR#%7B%22pageId%22%3A%22zsw55LCCuFM0yS5R2fEg%22%7D">ERD</a>
 <img src="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/ERD/ERD.png" />
 </div>
+<br>
+<br>
 
 ---
 <div align=center>
 <h2> ⚙️ 시스템 아키텍처 설계서 </h2>
 <a href="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/e5498ed1-97a3-4119-800f-17d86b315299">시스템 아키텍처 설계서</a>
 </div>
+<br>
+<br>
 
 ---
 <div align=center>
 <h2> 📰 프로그램 사양서 </h2>
 <a href="https://github.com/yujeong-shin/OrTopia/blob/master/Docs/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%82%AC%EC%96%91%EC%84%9C/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20%EC%82%AC%EC%96%91%EC%84%9C.pdf">프로그램 사양서</a>
 </div>
+<br>
+<br>
 
 ---
 
-
----
 <div align=center>
 <h2> 📈 CI/CD 계획서 </h2>
 <img src="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/assets/57553339/044ef5ff-42a8-48c2-ad9a-935a4ba692b6" />
+</div>
  
 <h3> Front </h3>
-1. Jenkins를 사용해 Front 코드를 빌드 후, S3 버킷에 업로드
-2. Webhook 설정 시 ngrok 사용해 local URL을 public URL로 변경
-* Front 코드 변경이 발생 즉시, GitHub hook trigger를 통해 빌드 완전 자동화
+1. Jenkins를 사용해 Front 코드를 빌드 후, S3 버킷에 업로드<br>
+2. Webhook 설정 시 ngrok 사용해 local URL을 public URL로 변경<br>
+* Front 코드 변경이 발생 즉시, GitHub hook trigger를 통해 빌드 완전 자동화<br>
 
 <h4> Front Script </h4>
-1. Git Clone
-2. 해당 Repo로 checkout
-3. vue run/build를 위한 npm 설치
-4. AWS CLI 자격 증명
+1. Git Clone<br>
+2. 해당 Repo로 checkout<br>
+3. vue run/build를 위한 npm 설치<br>
+4. AWS CLI 자격 증명<br>
 5. 프론트 빌드 후 생성되는 dist 폴더 S3 bucket에 업로드
 
+<br>
+<br>
 
 <h3> Back </h3>
-1. 개발자 코드 수정 후 PUSH할 때마다 Docker 이미지를 ECR에 업로드
-2. 마스터 노드가 ECR에 올린 Docker 이미지를 다운
-3. AWS EKS 서비스를 사용해 다중 서버 구동
-* Order, Item, Member, Notice
-4. Recommendation 서버는 버전 충돌 문제로 인해 별도의 AWS EC2 서버 구동
-5. 서버 간 비동기 DB 업데이트 요청은 Kafka를 사용해 비동기로 처리, 동기가 필요한 업데이트 요청은 동기로 처리. 
-6. Git Actions, Kubernetes 내장 secret 활용해 외부로부터 중요 정보 보호
+1. 개발자 코드 수정 후 PUSH할 때마다 Docker 이미지를 ECR에 업로드<br>
+2. 마스터 노드가 ECR에 올린 Docker 이미지를 다운<br>
+3. AWS EKS 서비스를 사용해 다중 서버 구동<br>
+* Order, Item, Member, Notice<br>
+4. Recommendation 서버는 버전 충돌 문제로 인해 별도의 AWS EC2 서버 구동<br>
+5. 서버 간 비동기 DB 업데이트 요청은 Kafka를 사용해 비동기로 처리, 동기가 필요한 업데이트 요청은 동기로 처리. <br>
+6. Git Actions, Kubernetes 내장 secret 활용해 외부로부터 중요 정보 보호<br>
 7. AWS Elasti Cache를 사용하여 Redis 관리 - 토큰 검증, 추천 아이템 저장, 아이템 재고 관리, 최근 본 상품 관리, 결제 코드 관리
 
 <h4> Back Script </h4>
-1. 해당 Repo로 checkout
-2. EKS 클러스터와 상호 작용하기 위한 kubectl 구성 파일 생성
-3. docker로 생성한 백엔드 이미지 빌드 후 ECR에 업로드
+1. 해당 Repo로 checkout<br>
+2. EKS 클러스터와 상호 작용하기 위한 kubectl 구성 파일 생성<br>
+3. docker로 생성한 백엔드 이미지 빌드 후 ECR에 업로드<br>
 4. pod 생성 시 백엔드 이미지 배포
-
-
-</div>
+<br>
+<br>
 
 ---
 <div align=center>
