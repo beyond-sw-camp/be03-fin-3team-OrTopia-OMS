@@ -118,6 +118,15 @@
 <br>
 
 ---
+
+<div align=center>
+<h2> 📑 배포 결과 테스트 </h2>
+<a href="https://github.com/beyond-sw-camp/be03-fin-3team-OrTopia-OMS/blob/main/Docs/3%EC%A1%B0_%EB%B0%B0%ED%8F%AC%EA%B2%B0%EA%B3%BC%ED%85%8C%EC%8A%A4%ED%8A%B8.pdf">배포 결과 테스트</a>
+</div>
+<br>
+<br>
+
+---
 <div align=center>
 <h2> 🧩 주요 단위 테스트 결과서 </h2> 
 * 메인 페이지
